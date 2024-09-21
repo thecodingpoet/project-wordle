@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { sample } from '../../utils'
 import { WORDS } from '../../data'
 import GuessInput from '../GuessInput'
-import Guess from '../Guess'
+import GuessResults from '../GuessResults'
 import Banner from '../Banner'
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants'
 
@@ -32,7 +32,7 @@ function Game() {
 
   return (
     <>
-      <Guess guessHistory={guessHistory} answer={answer} />
+      <GuessResults guessHistory={guessHistory} answer={answer} />
       <GuessInput
         onSubmit={handleGuessSubmit}
         onChange={handleGuessChange}

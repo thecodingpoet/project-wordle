@@ -1,28 +1,18 @@
 import React from 'react'
 import { range } from '../../utils'
-import { NUM_OF_GUESSES_ALLOWED, LENGTH_OF_GUESS } from '../../constants'
-import { checkGuess } from '../../game-helpers'
+import { LENGTH_OF_GUESS } from '../../constants'
 
-function Guess({ guessHistory, answer }) {
+function Cell({ status, letter }) {
+  return <span className={`cell ${status ? status : ''}`}>{letter}</span>
+}
+
+function Guess({ guess }) {
   return (
-    <div className='guess-results'>
-      {range(0, NUM_OF_GUESSES_ALLOWED).map((index) => {
-        const guess = guessHistory[index]
-        const checkedGuess = checkGuess(guess, answer)
-
-        return (
-          <p key={index} className='guess'>
-            {range(0, LENGTH_OF_GUESS).map((index) =>
-              checkedGuess ? (
-                <span className={`cell ${checkedGuess[index].status}`}>{checkedGuess[index].letter}</span>
-              ) : (
-                <span className='cell'></span>
-              )
-            )}
-          </p>
-        )
-      })}
-    </div>
+    <p className='guess'>
+      {range(LENGTH_OF_GUESS).map((index) => (
+        <Cell key={index} status={guess?.[index].status} letter={guess?.[index].letter} />
+      ))}
+    </p>
   )
 }
 
