@@ -10,13 +10,7 @@ function GuessInput({ setGuessHistory }) {
   function handleSubmit(event) {
     event.preventDefault()
     setGuess('')
-    setGuessHistory((prevGuesses) => [
-      ...prevGuesses,
-      {
-        id: Math.random(),
-        value: guess,
-      },
-    ])
+    setGuessHistory((prevGuesses) => [...prevGuesses, guess])
   }
 
   return (
