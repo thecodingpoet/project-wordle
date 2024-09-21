@@ -37,7 +37,7 @@ function Game() {
         onSubmit={handleGuessSubmit}
         onChange={handleGuessChange}
         guess={guess}
-        disabled={guessHistory.length === 6}
+        disabled={guessHistory.length === NUM_OF_GUESSES_ALLOWED}
       />
       <Banner
         type={correctAnswer ? 'happy' : 'sad'}
