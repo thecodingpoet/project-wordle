@@ -1,0 +1,11 @@
+{
+  "jsxSingleQuote": true,
+  "jsxBracketSameLine": false,
+  "singleQuote": true,
+  "printWidth": 120,
+  "semi": false,
+  "trailingComma": "es5",
+  "arrowParens": "always",
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
